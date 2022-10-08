@@ -1,0 +1,26 @@
+Title: Heart disease prediciton and risk factors
+
+Team members: Adam Fowler, Tyler Sanchez, Jacob Unger
+
+Description: Using data from the Behavioral Risk Factor Surveillance System (BRFSS), determine which risk factors are the strongest indicators of heart disease.
+Look for correlations between risk factors. Attempt to predict heart disease in a patient given the presence of indicators.
+Prior Work: What prior work has been done on your idea
+
+Dataset:
+○ Heart Disease Health Indicators Dataset
+○ https://www.kaggle.com/datasets/alexteboul/heart-disease-health-indicators-dataset
+○ The dataset and our additions will be stored at https://github.com/cockytrumpet/data-mining-group-4
+
+Proposed work: what do you need to do?
+○ Data cleaning:
+○ Data preprocessing:
+○ Data integration:
+○ etc.
+Create bins for attributes: BMI, Age
+List of tool(s) you intend to use
+Tools: pandas - dataset manipulation
+       matplotlib/seaborn - visualization
+       scikit - analysis/classification
+
+Evaluation: How you can evaluate your results
+Sample to create a testing dataset. Test the efficacy of our model.
