@@ -13,8 +13,19 @@ Dataset:
 
 Proposed work: what do you need to do?
 ○ Data cleaning:
+•	The first that will need to happen is find any discrepancies in the data, this will insure the accuracy of the data, next we will make sure the variables all line up and are in the same format across all entries, i.e. dates are all in the same format.
+•	For missing values, we will use a universal constant where ever that may be necessary. Either a numerical value or a ‘Unknown’ label. 
+•	In order to clean up noise, we will start with using an outlier analysis to see if there are any outliers to remove to smooth the data. Then a regression will be used to see if there two variables are related. 
+
 ○ Data preprocessing:
+wo of the big things that we need to analyze in the preprocessing part of this project is looking at the believability and interpretability of the data. This will insure the data can be trusted and that it can be understood. 
+•	The other things that we will need make sure that our dataset has is the accuracy and consistency of the data, this will insure the first two things and it will. 
+•	The last part of this will be any data reduction or data transformation we will need to do in order to have the best data sample that we can have. 
+
 ○ Data integration:
+•	For this, we will do a correlation analysis to see if there is anything that we can use to predict heart disease based on the attributes that are given. 
+•	We will need to make sure that we pay attention to conflict detection and then make sure that we can resolve any issues that come up. 
+
 ○ etc.
 Create bins for attributes: BMI, Age
 List of tool(s) you intend to use
