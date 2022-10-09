@@ -4,6 +4,14 @@ Team members: Adam Fowler, Tyler Sanchez, Jacob Unger
 
 Description: Using data from the Behavioral Risk Factor Surveillance System (BRFSS), determine which risk factors are the strongest indicators of heart disease.
 Look for correlations between risk factors. Attempt to predict heart disease in a patient given the presence of indicators.
+
+Questions we intend to investigate from this data set:
+1.
+2.
+3.
+4.
+5.
+
 Prior Work: What prior work has been done on your idea
 
 Dataset:
