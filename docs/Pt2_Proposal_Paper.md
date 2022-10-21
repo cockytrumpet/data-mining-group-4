@@ -11,7 +11,38 @@ Look into what previous work has been done with both this data and other data th
 	- Will likely be a blend of the two as It might be hard to do something not explored on such a well researched topic. Why we believe the replication is interesting, or important could be something to talk about here.
 
 ### Data Set
-Here we just provide a link to the data and describe it. The attributes, the size, any information we can find about collection locations/methods in the meta data might be interesting and something we can talk about here
+
+The Behavioral Risk Factor Surveillance System (BRFSS) is a health-related telephone survey that is collected annually by the CDC. This dataset is reduced and cleaned from the responses given in 2015. It can be found at https://www.kaggle.com/datasets/alexteboul/heart-disease-health-indicators-dataset. Our working copy as well as the version containing derived attributes will be available at https://github.com/cockytrumpet/data-mining-group-4.
+
+
+The data set contains 253680 objects, each with 22 attributes.
+
+| Attribute | Description | Type | Requires Data Binning |
+|-|-|-|-|
+HeartDiseaseorAttack | Heart disease or attack | Binary | No |
+HighBP | High blood pressure | Binary | No |
+HighChol | High cholesterol | Binary | No |
+CholCheck | Cholesterol check < 5 years | Binary | No |
+BMI | Body Mass Index | Ordinal | Yes |
+Smoker | >99 cigarettes ever smoked | Binary | No |
+Stroke | Ever had stroke | Binary | No |
+Diabetes | Has diabetes | Binary | No |
+PhysActivity | Pysical activity in past 30 days | Binary | No |
+Fruits | Consume fruit >= 1 time per day | Binary | No |
+Veggies | Consume vegetables >= 1 time per day | Binary | No |
+HvyAlcoholConsump | Men: >14 drinks/week, Women: >7 drinks/week | Binary | No |
+AnyHealthcare | Health coverage | Binary | No |
+NoDocbcCost | Didn't seek health care <12 months due to cost | Binary | No |
+GenHlth | General health | Ordinal | No |
+MentHlth | Days in past 30 days where mental health was poor | Ordinal | Yes |
+PhysHlth | Days in past 30 days where physical health was poor | Ordinal | Yes |
+DiffWalk | Difficulty walking or climbing stairs | Binary | No |
+Sex | Sex | Binary | No |
+Age | Age category | Ordinal | Yes |
+Education | Highest grade or year of school completed | Ordinal | No |
+Income | Annual household income | Ordinal | No |
+
+
 
 ### Evaluation Methods
 I am a bit confused as to what the goal here is, what metrics and existing solutiosn exist for this data? Or what models are we using to evaluate the data?
