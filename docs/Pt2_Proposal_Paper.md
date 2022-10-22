@@ -2,7 +2,9 @@
 Include here information about what knowledge we have compiled so far, how we want to apply that knowledge, and what we hope to uncover here. An adaptation of largely what was done in section one, stretched to be more detailed.
 
 ### Literature Review
-Look into what previous work has been done with both this data and other data that is closely related. Whould be pretty easy as there is plenty of studies regarding heart disease as it connects to many different interesting attributes
+Look into what previous work has been done with both this data and other data that is closely related. Would be pretty easy as there is plenty of studies regarding heart disease as it connects to many different interesting attributes
+
+Fortunatly, heart disease and heart disease indicators are a well researched topic. Unfortnatly, heart disease is a largely prevelant disease that affects many people world wide. Proposing the question of "how do we better predict heart disease?" helps us narrow down what work we can look at for background informtaion and inspiration in this exploratory study.
 
 ### Proposed Work
 - What needs to be done to the data in the first place
