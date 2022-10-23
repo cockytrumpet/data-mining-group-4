@@ -1,3 +1,4 @@
-./vscode
+.vscode/
+.obsidian/
 .DS_Store
 

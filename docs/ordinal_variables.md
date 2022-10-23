@@ -1,5 +1,22 @@
+# BMI
+The data set contains a wide range of values. The CDC defines the following categories:
+| Value | Weight Status | BMI |
+|-|-|-|
+| 0 | Underweight | <18.5 |
+| 1 | Healthy Weight | 18.5-24.9 |
+| 2 | Overweight | 25-29.9 |
+| 3 | Obesity | >30 |
+
+# Mental Health and Physical Health
+The number of days in the last month with "bad" mental/physical health. First thought about how to bin:
+| Value | Category | Days |
+|-|-|-|
+| 0 | Low | 1-10 |
+| 1 | Medium | 11-20 |
+| 2 | High | 21+ |
+
 # Diabetes
-We can probably reduce this down to binary.
+We can probably reduce this down to binary?
 | Value | |
 |-|-|
 | 0 | No |

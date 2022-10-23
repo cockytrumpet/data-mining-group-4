@@ -9,6 +9,7 @@ Fortunatly, heart disease and heart disease indicators are a well researched top
 ### Proposed Work
 - What needs to be done to the data in the first place
 	- Seems pretty cleaned, will update this shortly
+	- Derive bins from variables: BMI, MentHlth, PhysHlth, Age(?)
 - What are we doing that is different that what has been previusly done based on what we found in the literature review, or how and why we are replicating certain things
 	- Will likely be a blend of the two as It might be hard to do something not explored on such a well researched topic. Why we believe the replication is interesting, or important could be something to talk about here.
 
@@ -49,7 +50,10 @@ Income | Annual household income | Ordinal | No |
 ### Evaluation Methods
 I am a bit confused as to what the goal here is, what metrics and existing solutiosn exist for this data? Or what models are we using to evaluate the data?
 
-How can we evaluate the results of our analysis? 
+How can we evaluate the results of our analysis?
+- Is our trained model able to make accurate predictions?
+- How do our results compare to results seen in the literature?
+- I think the app would be an extension to bullet 1. Once we have a useful model we could show the real world application of it. For me, this falls into the category of "would be nice to have" given we get the rest of the project to a presentable state with time to spare.
 - This could be where the full stack app maybe comes in, as long as we see that as a reasonable use of time in this class. Having an interactive tool that reports information back to users as well as generates its own data could be interesting way to evaluate the fidnings in the data that we find as compared to the (minimal albeit) data we could generate with the small web app. My main concern is how many new potential issues we could be potentially introducing to a relatively simple exploration project. Would have to gauge group interest level in this because it might just lead to more headaches than worth it at this point in everyones degree progress.
 
 ### Tools Used
@@ -58,4 +62,14 @@ Python and R will be the main programming frameworks used for data analysis, mod
 
 ### Milestones
 How can we roadmap this project? Looking ahead, coordinate due dates with certain things we can reasonable achieve in that time.
+
+- November 01: Data cleaning and attribute binning completed
+- October 31:
+- November 07: 
+- November 14:
+- November 21:
+- **November 28: Project Part 3 Due – Progress Report**
+- November 28: Report final revisions, Code clean-up
+- December 05: Presentation final revisions
+- **December 08: Project Parts 4-7 Due - Report, Code, Presentation, Evaluations**
 
