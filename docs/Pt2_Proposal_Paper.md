@@ -1,12 +1,30 @@
 ### Problem Statement and Motivation
-Include here information about what knowledge we have compiled so far, how we want to apply that knowledge, and what we hope to uncover here. An adaptation of largely what was done in section one, stretched to be more detailed.
+
+Heart disease is the leading cause of death for men, women, and people of most racial and ethnic groups in the United States. About 697,000 people in the United States died from heart disease in 2020—that’s 1 in every 5 deaths. Heart disease cost the United States about $229 billion each year from 2017 to 2018.3. This includes the cost of health care services, medicines, and lost productivity due to death. (citation: https://www.cdc.gov/heartdisease/facts.htm)
+
+The Behavioral Risk Factor Surveillance System (BRFSS) is the nation’s premier system of health-related telephone surveys that collect state data about U.S. residents regarding their health-related risk behaviors, chronic health conditions, and use of preventive services. Established in 1984 with 15 states, BRFSS now collects data in all 50 states as well as the District of Columbia and three U.S. territories. BRFSS completes more than 400,000 adult interviews each year, making it the largest continuously conducted health survey system in the world. (citation: https://www.cdc.gov/brfss/index.html)
+
+Using data from the BRFSS, we intend to determine which risk factors are the strongest indicators of heart disease and look for correlations between risk factors. We will then attempt to predict heart disease in a patient given the presence of indicators using <insert smart sounding words about classification/ML here>
+
 
 ### Literature Review
-Look into what previous work has been done with both this data and other data that is closely related. Would be pretty easy as there is plenty of studies regarding heart disease as it connects to many different interesting attributes
 
-Fortunatly, heart disease and heart disease indicators are a well researched topic. Unfortnatly, heart disease is a largely prevelant disease that affects many people world wide. Proposing the question of "how do we better predict heart disease?" helps us narrow down what work we can look at for background informtaion and inspiration in this exploratory study.
+Fortunately, heart disease and heart disease indicators are a well researched topic. Unfortunately, heart disease is a largely prevalent disease that affects many people world wide. Proposing the question of "how do we better predict heart disease?" helps us narrow down what work we can look at for background information and inspiration in this exploratory study. The prediction of heart disease has far reaching implication on better individual health and societal health, as cardiovascular disease is the biggest cause of morbidity and mortality. To determine where the current research stands, we looked at papers under search terms such as "heart disease prediction", "predictive factors of heart disease", and "health indicators heart disease". 
+
+In one study, by authors Tavia Gordan; William P. Castelli, MD; Marthana C. Hjortland, PhD; et al, titled 'Predicting Coronary Heart Disease in Middle-Aged and Older Persons'...
+https://jamanetwork.com/journals/jama/article-abstract/354740
+
+
+A study titled "Predicting Heart Disease at Early Stages using Machine Learning: A Survey" by authors Rahul Katarya, Polipireddy Srinivas, et al, used some similar data analysis techniques that we aim to use in our analysis, providing a good roadmap for us to look at. These modeling techniques included...
+https://ieeexplore.ieee.org/abstract/document/9155586
+
+
+Looking at the more technical aspect of studying heart disease using prediction factors, the study titled "Identification of significant features and data mining techniques in predicting heart disease" by authors Mohammad ShafenoorAminac, Yin KiaChiama, and Kasturi DewiVarathanb, looks at specific techniques in data mining that are common in this field of study and provides good background information for us as we move into this space...
+https://www.sciencedirect.com/science/article/abs/pii/S0736585318308876
+
 
 ### Proposed Work
+
 The first thing that we will need to do for this section is create data bins that will be made from the variables at hand. These will look at variables like BMI, Sex, Age, Physical Health, or any of the other attributes that are listed in out data set. As for the data cleaning, it overall looks pretty well organized and complete, it will mostly be checking for any missing data and making sure that all of the data lines up with each other structurally. 
 
 Once we create the bins from the variables, we will then analyze the bins to see if we can create a model to predict heart disease based on the difference variables. For this, the best model will be a decision tree, this will run through the different variables and then hopefully be able to indicate whether or not there is a risk of heart disease. The analysis for this will be done through Python, Pandas, and R. 
@@ -59,7 +77,16 @@ How can we evaluate the results of our analysis?
 
 ### Tools Used
 Python and R will be the main programming frameworks used for data analysis, model generation, and data visualization. Within these frameworks, packages such as Pandas will be used for dataset manipulation to prepare for processing, matplotlib, seaborn, and ggplot will be used to create visualizations of the data, and scikit will be used for analysis and classification of the data
-- Should include citations to the packages we plan on using and perhaps a short section on anything else we might use but havent settled on yet.
+
+| Tool | Source |
+|-|-|
+| Python | https://www.python.org/ |
+| R | https://www.r-project.org/ |
+| Pandas | https://pandas.pydata.org/ |
+| Matplotlib | https://matplotlib.org/ |
+| Seaborn | https://seaborn.pydata.org/ |
+| Ggplot | https://ggplot2.tidyverse.org/ |
+| Scikit | https://scikit-learn.org/stable/index.html|
 
 ### Milestones
 How can we roadmap this project? Looking ahead, coordinate due dates with certain things we can reasonable achieve in that time.
