@@ -1,10 +1,10 @@
 ### Problem Statement and Motivation
 
-Heart disease is the leading cause of death for men, women, and people of most racial and ethnic groups in the United States. About 697,000 people in the United States died from heart disease in 2020—that’s 1 in every 5 deaths. Heart disease cost the United States about $229 billion each year from 2017 to 2018.3. This includes the cost of health care services, medicines, and lost productivity due to death. (citation: https://www.cdc.gov/heartdisease/facts.htm)
+Heart disease is the leading cause of death for men, women, and people of most racial and ethnic groups in the United States. About 697,000 people in the United States died from heart disease in 2020—that’s 1 in every 5 deaths. Heart disease cost the United States about $229 billion each year from 2017 to 2018. This includes the cost of health care services, medicines, and lost productivity due to death. (citation: https://www.cdc.gov/heartdisease/facts.htm)
 
 The Behavioral Risk Factor Surveillance System (BRFSS) is the nation’s premier system of health-related telephone surveys that collect state data about U.S. residents regarding their health-related risk behaviors, chronic health conditions, and use of preventive services. Established in 1984 with 15 states, BRFSS now collects data in all 50 states as well as the District of Columbia and three U.S. territories. BRFSS completes more than 400,000 adult interviews each year, making it the largest continuously conducted health survey system in the world. (citation: https://www.cdc.gov/brfss/index.html)
 
-Using data from the BRFSS, we intend to determine which risk factors are the strongest indicators of heart disease and look for correlations between risk factors. We will then attempt to predict heart disease in a patient given the presence of indicators using <insert smart sounding words about classification/ML here>
+Using data from the BRFSS, we intend to determine which risk factors are the strongest indicators of heart disease and look for correlations between risk factors. We will then attempt to predict heart disease in a patient given the presence of indicators using various techniques of classification.
 
 
 ### Literature Review (Needs Proper Citations)
@@ -27,14 +27,14 @@ https://www.sciencedirect.com/science/article/abs/pii/S0736585318308876
 
 The first thing that we will need to do for this section is create data bins that will be made from the variables at hand. These will look at variables like BMI, Sex, Age, Physical Health, or any of the other attributes that are listed in out data set. As for the data cleaning, it overall looks pretty well organized and complete, it will mostly be checking for any missing data and making sure that all of the data lines up with each other structurally. 
 
-Once we create the bins from the variables, we will then analyze the bins to see if we can create a model to predict heart disease based on the difference variables. For this, the best model will be a decision tree, this will run through the different variables and then hopefully be able to indicate whether or not there is a risk of heart disease. The analysis for this will be done through Python, Pandas, and R. 
+Once we create the bins from the variables, we will then analyze the bins to see if we can create a model to predict heart disease based on the different variables. For this, the best model could be a decision tree, this will run through the different variables and then hopefully be able to indicate whether or not there is a risk of heart disease. The analysis for this will be done through Python, Pandas, and R. 
 
-Looking at past reviews, this is a very studied topic, in some ways this will be a similar study to those done in the past in the case that this will be trying to predict heart disease based on certain variables. Also when looking at prior studies, it looks like there may be similarities on strategies as well to analyze this data and then create a model to predict this. The difference in this project, is that different bins will be analyzed to see if it is able to find a better predictor of heart disease. 
+Looking at past reviews, this is a very studied topic, in some ways this will be a similar study to those done in the past in the case that this will be trying to predict heart disease based on certain variables. Also when looking at prior studies, it looks like there may be similarities on strategies that we can use as a guide to analyze the data and then create a model for prediction. The difference in this project, is that additional derived attributes will be analyzed to see if it is able to find a better predictor of heart disease. 
 
 
 ### Data Set
 
-The Behavioral Risk Factor Surveillance System (BRFSS) is a health-related telephone survey that is collected annually by the CDC. This dataset is reduced and cleaned from the responses given in 2015. It can be found at https://www.kaggle.com/datasets/alexteboul/heart-disease-health-indicators-dataset. Our working copy as well as the version containing derived attributes will be available at https://github.com/cockytrumpet/data-mining-group-4.
+The Behavioral Risk Factor Surveillance System (BRFSS) is a health-related telephone survey that is collected annually by the CDC. A sample of the survey and it's questions can be found at https://www.cdc.gov/brfss/annual_data/2015/pdf/codebook15_llcp.pdf. This dataset is reduced and cleaned from the responses given in 2015. It can be found at https://www.kaggle.com/datasets/alexteboul/heart-disease-health-indicators-dataset. Our working copy as well as the version containing derived attributes will be available at https://github.com/cockytrumpet/data-mining-group-4.
 
 
 The data set contains 253680 objects, each with 22 attributes.
@@ -44,7 +44,7 @@ The data set contains 253680 objects, each with 22 attributes.
 HeartDiseaseorAttack | Heart disease or attack | Binary | No |
 HighBP | High blood pressure | Binary | No |
 HighChol | High cholesterol | Binary | No |
-CholCheck | Cholesterol check < 5 years | Binary | No |
+CholCheck | Cholesterol check within last 5 years | Binary | No |
 BMI | Body Mass Index | Ordinal | Yes |
 Smoker | >99 cigarettes ever smoked | Binary | No |
 Stroke | Ever had stroke | Binary | No |
@@ -54,7 +54,7 @@ Fruits | Consume fruit >= 1 time per day | Binary | No |
 Veggies | Consume vegetables >= 1 time per day | Binary | No |
 HvyAlcoholConsump | Men: >14 drinks/week, Women: >7 drinks/week | Binary | No |
 AnyHealthcare | Health coverage | Binary | No |
-NoDocbcCost | Didn't seek health care <12 months due to cost | Binary | No |
+NoDocbcCost | Didn't seek health care in last 12 months due to cost | Binary | No |
 GenHlth | General health | Ordinal | No |
 MentHlth | Days in past 30 days where mental health was poor | Ordinal | Yes |
 PhysHlth | Days in past 30 days where physical health was poor | Ordinal | Yes |
@@ -67,13 +67,9 @@ Income | Annual household income | Ordinal | No |
 
 
 ### Evaluation Methods
-I am a bit confused as to what the goal here is, what metrics and existing solutiosn exist for this data? Or what models are we using to evaluate the data?
+Ultimately, the success of our project will be determined by our ability to work with the data set. Can we create a model to make accurate predictions? Although is unlikely that we will be able to acheive the level of accuracy that was obtained from the more advanced methods shown in the literature review, if our results can mirror those results to a significant degree, that would be considered successful. 
 
-How can we evaluate the results of our analysis?
-- Is our trained model able to make accurate predictions?
-- How do our results compare to results seen in the literature?
-- I think the app would be an extension to bullet 1. Once we have a useful model we could show the real world application of it. For me, this falls into the category of "would be nice to have" given we get the rest of the project to a presentable state with time to spare.
-- This could be where the full stack app maybe comes in, as long as we see that as a reasonable use of time in this class. Having an interactive tool that reports information back to users as well as generates its own data could be interesting way to evaluate the fidnings in the data that we find as compared to the (minimal albeit) data we could generate with the small web app. My main concern is how many new potential issues we could be potentially introducing to a relatively simple exploration project. Would have to gauge group interest level in this because it might just lead to more headaches than worth it at this point in everyones degree progress.
+Once the model is in place, it's efficacy can be demonstrated in a real world scenario via a user interface that allows a patients data to be entered then classified by the model.
 
 ### Tools Used
 Python and R will be the main programming frameworks used for data analysis, model generation, and data visualization. Within these frameworks, packages such as Pandas will be used for dataset manipulation to prepare for processing, matplotlib, seaborn, and ggplot will be used to create visualizations of the data, and scikit will be used for analysis and classification of the data
@@ -89,15 +85,12 @@ Python and R will be the main programming frameworks used for data analysis, mod
 | Scikit | https://scikit-learn.org/stable/index.html|
 
 ### Milestones
-How can we roadmap this project? Looking ahead, coordinate due dates with certain things we can reasonable achieve in that time.
 
-- November 01: Data cleaning and attribute binning completed
-- October 31:
-- November 07: 
-- November 14:
-- November 21:
-- **November 28: Project Part 3 Due – Progress Report**
-- November 28: Report final revisions, Code clean-up
-- December 05: Presentation final revisions
-- **December 08: Project Parts 4-7 Due - Report, Code, Presentation, Evaluations**
-
+- Oct 31: Data cleaning and attribute binning completed
+- Nov 07: Preliminary analysis, classification methodologies chosen
+- Nov 14: Model trained
+- Nov 21: Report first draft
+- **Nov 28: Project Part 3 Due – Progress Report**
+- Nov 28: Report final revisions, Presentation first draft
+- Dec 05: Presentation final revisions, Code clean-up
+- **Dec 08: Project Parts 4-7 Due - Report, Code, Presentation, Evaluations**
