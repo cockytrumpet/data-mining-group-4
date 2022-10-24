@@ -7,11 +7,12 @@ Look into what previous work has been done with both this data and other data th
 Fortunatly, heart disease and heart disease indicators are a well researched topic. Unfortnatly, heart disease is a largely prevelant disease that affects many people world wide. Proposing the question of "how do we better predict heart disease?" helps us narrow down what work we can look at for background informtaion and inspiration in this exploratory study.
 
 ### Proposed Work
-- What needs to be done to the data in the first place
-	- Seems pretty cleaned, will update this shortly
-	- Derive bins from variables: BMI, MentHlth, PhysHlth, Age(?)
-- What are we doing that is different that what has been previusly done based on what we found in the literature review, or how and why we are replicating certain things
-	- Will likely be a blend of the two as It might be hard to do something not explored on such a well researched topic. Why we believe the replication is interesting, or important could be something to talk about here.
+The first thing that we will need to do for this section is create data bins that will be made from the variables at hand. These will look at variables like BMI, Sex, Age, Physical Health, or any of the other attributes that are listed in out data set. As for the data cleaning, it overall looks pretty well organized and complete, it will mostly be checking for any missing data and making sure that all of the data lines up with each other structurally. 
+
+Once we create the bins from the variables, we will then analyze the bins to see if we can create a model to predict heart disease based on the difference variables. For this, the best model will be a decision tree, this will run through the different variables and then hopefully be able to indicate whether or not there is a risk of heart disease. The analysis for this will be done through Python, Pandas, and R. 
+
+Looking at past data 
+
 
 ### Data Set
 
