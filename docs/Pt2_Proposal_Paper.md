@@ -11,7 +11,7 @@ The first thing that we will need to do for this section is create data bins tha
 
 Once we create the bins from the variables, we will then analyze the bins to see if we can create a model to predict heart disease based on the difference variables. For this, the best model will be a decision tree, this will run through the different variables and then hopefully be able to indicate whether or not there is a risk of heart disease. The analysis for this will be done through Python, Pandas, and R. 
 
-Looking at past data 
+Looking at past reviews, this is a very studied topic, in some ways this will be a similar study to those done in the past in the case that this will be trying to predict heart disease based on certain variables. Also when looking at prior studies, it looks like there may be similarities on strategies as well to analyze this data and then create a model to predict this. The difference in this project, is that different bins will be analyzed to see if it is able to find a better predictor of heart disease. 
 
 
 ### Data Set
