@@ -24,11 +24,13 @@ https://www.sciencedirect.com/science/article/abs/pii/S0736585318308876
 
 
 ### Proposed Work
-- What needs to be done to the data in the first place
-	- Seems pretty cleaned, will update this shortly
-- Derive bins from variables: BMI, MentHlth, PhysHlth, Age(?)
-- What are we doing that is different that what has been previusly done based on what we found in the literature review, or how and why we are replicating certain things
-	- Will likely be a blend of the two as It might be hard to do something not explored on such a well researched topic. Why we believe the replication is interesting, or important could be something to talk about here.
+
+The first thing that we will need to do for this section is create data bins that will be made from the variables at hand. These will look at variables like BMI, Sex, Age, Physical Health, or any of the other attributes that are listed in out data set. As for the data cleaning, it overall looks pretty well organized and complete, it will mostly be checking for any missing data and making sure that all of the data lines up with each other structurally. 
+
+Once we create the bins from the variables, we will then analyze the bins to see if we can create a model to predict heart disease based on the difference variables. For this, the best model will be a decision tree, this will run through the different variables and then hopefully be able to indicate whether or not there is a risk of heart disease. The analysis for this will be done through Python, Pandas, and R. 
+
+Looking at past reviews, this is a very studied topic, in some ways this will be a similar study to those done in the past in the case that this will be trying to predict heart disease based on certain variables. Also when looking at prior studies, it looks like there may be similarities on strategies as well to analyze this data and then create a model to predict this. The difference in this project, is that different bins will be analyzed to see if it is able to find a better predictor of heart disease. 
+
 
 ### Data Set
 
