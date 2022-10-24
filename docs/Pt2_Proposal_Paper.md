@@ -6,10 +6,22 @@ The Behavioral Risk Factor Surveillance System (BRFSS) is the nation’s premier
 
 Using data from the BRFSS, we intend to determine which risk factors are the strongest indicators of heart disease and look for correlations between risk factors. We will then attempt to predict heart disease in a patient given the presence of indicators using <insert smart sounding words about classification/ML here>
 
-### Literature Review
-Look into what previous work has been done with both this data and other data that is closely related. Would be pretty easy as there is plenty of studies regarding heart disease as it connects to many different interesting attributes
 
-Fortunatly, heart disease and heart disease indicators are a well researched topic. Unfortnatly, heart disease is a largely prevelant disease that affects many people world wide. Proposing the question of "how do we better predict heart disease?" helps us narrow down what work we can look at for background informtaion and inspiration in this exploratory study.
+### Literature Review
+
+Fortunately, heart disease and heart disease indicators are a well researched topic. Unfortunately, heart disease is a largely prevalent disease that affects many people world wide. Proposing the question of "how do we better predict heart disease?" helps us narrow down what work we can look at for background information and inspiration in this exploratory study. The prediction of heart disease has far reaching implication on better individual health and societal health, as cardiovascular disease is the biggest cause of morbidity and mortality. To determine where the current research stands, we looked at papers under search terms such as "heart disease prediction", "predictive factors of heart disease", and "health indicators heart disease". 
+
+In one study, by authors Tavia Gordan; William P. Castelli, MD; Marthana C. Hjortland, PhD; et al, titled 'Predicting Coronary Heart Disease in Middle-Aged and Older Persons'...
+https://jamanetwork.com/journals/jama/article-abstract/354740
+
+
+A study titled "Predicting Heart Disease at Early Stages using Machine Learning: A Survey" by authors Rahul Katarya, Polipireddy Srinivas, et al, used some similar data analysis techniques that we aim to use in our analysis, providing a good roadmap for us to look at. These modeling techniques included...
+https://ieeexplore.ieee.org/abstract/document/9155586
+
+
+Looking at the more technical aspect of studying heart disease using prediction factors, the study titled "Identification of significant features and data mining techniques in predicting heart disease" by authors Mohammad ShafenoorAminac, Yin KiaChiama, and Kasturi DewiVarathanb, looks at specific techniques in data mining that are common in this field of study and provides good background information for us as we move into this space...
+https://www.sciencedirect.com/science/article/abs/pii/S0736585318308876
+
 
 ### Proposed Work
 - What needs to be done to the data in the first place
