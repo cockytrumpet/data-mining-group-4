@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import graphviz
 from sklearn import tree
 from sklearn.model_selection import train_test_split
 from sklearn import metrics
@@ -13,7 +14,7 @@ features_train, features_test, target_train, target_test = train_test_split(
     features, target, test_size=0.2, random_state=42
 )
 
-classifier = tree.DecisionTreeClassifier(max_depth=10, random_state=42)
+classifier = tree.DecisionTreeClassifier(max_depth=10, random_state=42, criterion='entropy')
 classifier.fit(features_train, target_train)
 result = classifier.predict(features_test)
 matrix = metrics.confusion_matrix(target_test, result)
@@ -30,3 +31,8 @@ importance = pd.DataFrame(
 )
 importance.sort_values("importance", ascending=False, inplace=True)
 print(importance)
+
+dot_data = tree.export_graphviz(classifier, out_file=None, feature_names=features_train.columns, filled=True, proportion=True, rounded=True, max_depth=4)
+graph = graphviz.Source(dot_data)
+graph.format = 'png'
+graph.render("tree")
