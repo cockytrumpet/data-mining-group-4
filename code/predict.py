@@ -6,17 +6,23 @@ MODEL = "tree_balanced"
 
 match MODEL:
     case "tree_balanced":
-        loaded_model = pickle.load(open("models/tree_balanced.model", "rb"))
+        with open("models/tree_balanced.model", "rb") as f:
+            loaded_model = pickle.load(f)
     case "tree":
-        loaded_model = pickle.load(open("models/tree.model", "rb"))
+        with open("models/tree.model", "rb") as f:
+            loaded_model = pickle.load(f)
     case "bayes":
-        loaded_model = pickle.load(open("models/bayes.model", "rb"))
+        with open("models/bayes.model", "rb") as f:
+            loaded_model = pickle.load(f)
     case "ada":
-        loaded_model = pickle.load(open("models/ada.model", "rb"))
+        with open("models/ada.model", "rb") as f:
+            loaded_model = pickle.load(f)
     case "mlp":
-        loaded_model = pickle.load(open("models/mlp.model", "rb"))
+        with open("models/mlp.model", "rb") as f:
+            loaded_model = pickle.load(f)
     case _:
-        loaded_model = pickle.load(open("models/tree_balanced.model", "rb"))
+        with open("models/tree_balanced.model", "rb") as f:
+            loaded_model = pickle.load(f)
 
 # input from user
 # logic will be needed to convert binned features
