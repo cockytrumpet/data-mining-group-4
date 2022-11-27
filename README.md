@@ -46,3 +46,8 @@ Sample of prior work:
 ### **Evaluation**
 - Sample to create a testing dataset. 
 - Test the efficacy of our model.
+
+<br><br>
+
+### **Will add information about launching the simple prediciton web applciation**
+- Add the steps here
