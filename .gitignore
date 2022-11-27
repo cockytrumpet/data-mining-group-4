@@ -1,4 +1,4 @@
 .vscode/
 .obsidian/
 .DS_Store
-
+.~lock*
