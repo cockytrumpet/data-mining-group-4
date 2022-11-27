@@ -2,6 +2,7 @@ import pandas as pd
 from sklearn.neural_network import MLPClassifier
 from sklearn.model_selection import train_test_split
 from sklearn import metrics
+import pickle
 
 data = pd.read_csv("datasets/dataset.csv", index_col=0)
 
@@ -20,3 +21,5 @@ matrix = metrics.confusion_matrix(target_test, result)
 print("Confusion matrix")
 print(matrix)
 print(metrics.classification_report(target_test, result))
+
+pickle.dump(classifier, open("models/mlp.model", "wb"))

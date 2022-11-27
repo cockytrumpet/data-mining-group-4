@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 from sklearn import tree
 from sklearn.model_selection import train_test_split
 from sklearn import metrics
+import pickle
 
 
 def make_tree(data, matrix_title, output_file):
@@ -22,6 +23,9 @@ def make_tree(data, matrix_title, output_file):
     classifier.fit(features_train, target_train)
     result = classifier.predict(features_test)
     matrix = metrics.confusion_matrix(target_test, result)
+
+    # save model
+    pickle.dump(classifier, open(f"models/{output_file}.model", "wb"))
 
     # save matrix to png
     names = ["True Negative", "False Positive", "False Negative", "True Positive"]
