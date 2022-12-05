@@ -51,3 +51,8 @@ Sample of prior work:
 
 ### **Will add information about launching the simple prediciton web applciation**
 - Add the steps here
+
+
+### **Link to presentation**
+https://docs.google.com/presentation/d/1csEElXiHB4GJ2vBgSL2gKtzkgLuavpISGrliMVuojoM/edit?usp=sharing
+
