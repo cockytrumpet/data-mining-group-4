@@ -1,12 +1,12 @@
-import pandas as pd
-import numpy as np
-import graphviz
-import seaborn as sns
-import matplotlib.pyplot as plt
-from sklearn import tree
-from sklearn.model_selection import train_test_split
-from sklearn import metrics
 import pickle
+
+import graphviz
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import seaborn as sns
+from sklearn import metrics, tree
+from sklearn.model_selection import train_test_split
 
 
 def make_tree(data, matrix_title, output_file):
@@ -18,7 +18,7 @@ def make_tree(data, matrix_title, output_file):
     )
 
     classifier = tree.DecisionTreeClassifier(
-        max_depth=9, min_samples_leaf=4, random_state=42, criterion="entropy"
+        max_depth=7, min_samples_leaf=4, random_state=42, criterion="entropy"
     )
     classifier.fit(features_train, target_train)
     result = classifier.predict(features_test)
