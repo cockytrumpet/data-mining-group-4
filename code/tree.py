@@ -1,12 +1,12 @@
-import pandas as pd
-import numpy as np
-import graphviz
-import seaborn as sns
-import matplotlib.pyplot as plt
-from sklearn import tree
-from sklearn.model_selection import train_test_split
-from sklearn import metrics
 import pickle
+
+import graphviz
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import seaborn as sns
+from sklearn import metrics, tree
+from sklearn.model_selection import train_test_split
 
 
 def make_tree(data, matrix_title, output_file):
@@ -37,7 +37,7 @@ def make_tree(data, matrix_title, output_file):
     pretty_matrix = sns.heatmap(matrix, annot=labels, fmt="")
     pretty_matrix.set(title=matrix_title)
     pretty_matrix.set(xlabel="Predicted", ylabel="Actual")
-    plt.savefig(f"{output_file}_matrix")
+    plt.savefig(f"results/tree/{output_file}_matrix")
 
     # print stats
     importance = pd.DataFrame(
@@ -47,9 +47,10 @@ def make_tree(data, matrix_title, output_file):
         }
     )
     importance.sort_values("importance", ascending=False, inplace=True)
-    print(f"{matrix_title}")
-    print(metrics.classification_report(target_test, result))
-    print(importance)
+    with open(f"results/tree/{output_file}_stats.txt", "w") as f:
+        f.write(metrics.classification_report(target_test, result))
+        f.write("\n")
+        f.write(importance.to_string())
 
     # save decision tree as png
     dot_data = tree.export_graphviz(
@@ -64,17 +65,33 @@ def make_tree(data, matrix_title, output_file):
     )
     graph = graphviz.Source(dot_data)
     graph.format = "png"
-    graph.render(output_file)
+    graph.render(f"results/tree/{output_file}")
+
+    # save decision tree as png with depth of 9 (actually used for decisions)
+    dot_data = tree.export_graphviz(
+        classifier,
+        out_file=None,
+        feature_names=features_train.columns,
+        filled=True,
+        proportion=True,
+        rounded=True,
+        max_depth=9,
+        rotate=True,
+    )
+    graph = graphviz.Source(dot_data)
+    graph.format = "png"
+    graph.render(f"results/tree/{output_file}_full")
 
 
 data_original = pd.read_csv("datasets/dataset.csv", index_col=0)
-
+"""
 pos_sample = data_original[data_original["HeartDiseaseorAttack"] == 1]
 neg_sample = data_original[data_original["HeartDiseaseorAttack"] == 0].sample(
     n=len(pos_sample)
 )
 data_balanced = pd.concat([pos_sample, neg_sample], ignore_index=True)
 data_balanced = data_balanced.sample(frac=1)
-
+"""
+data_balanced = pd.read_csv("datasets/dataset_balanced.csv", index_col=0)
 make_tree(data_original, "Original", "tree")
 make_tree(data_balanced, "Balanced", "tree_balanced")
