@@ -1,26 +1,249 @@
-<html>
-<form action="/data" method = "POST">
-    <p>HighBP <input type = "text" name = "HighBP" /></p>
-    <p>HighChol <input type = "text" name = "HighChol" /></p>
-    <input type = "text" name = "CholCheck" value = 0 hidden = true/></p>
-    <p>Smoker <input type = "text" name = "Smoker" /></p>
-    <p>Stroke <input type = "text" name = "Stroke" /></p>
-    <input type = "text" name = "PhysActivity" value = 0 hidden = true/></p>
-    <input type = "text" name = "Fruits" value = 0 hidden = true/></p>
-    <input type = "text" name = "Veggies" value = 0 hidden = true/></p>
-    <input type = "text" name = "HvyAlcoholConsump" value = 0 hidden = true/></p>
-    <input type = "text" name = "AnyHealthcare" value = 0 hidden = true/></p>
-    <input type = "text" name = "NoDocbcCost" value = 0 hidden = true/></p>
-    <p>GenHlth <input type = "text" name = "GenHlth" /></p>
-    <input type = "text" name = "DiffWalk" value = 0 hidden = true/></p>
-    <p>Sex <input type = "text" name = "Sex" /></p>
-    <p>Age <input type = "text" name = "Age" /></p>
-    <input type = "text" name = "Education" value = 0 hidden = true/></p>
-    <input type = "text" name = "Income" value = 0 hidden = true/></p>
-    <input type = "text" name = "BMI_bin" value = 0 hidden = true/></p>
-    <input type = "text" name = "MentHlth_bin" value = 0 hidden = true/></p>
-    <input type = "text" name = "PhysHlth_bin" value = 0 hidden = true/></p>
-    <input type = "text" name = "Diabetes_bin" value = 0 hidden = true/></p>
-    <p><input type = "submit" value = "Submit" /></p>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> Basic Heart Disease Risk Factor Predictor </title>
+    <style>
+        /* I really need to pull out this style sheet but it broke whne I did so thats a later problem */
+               /* Styling the Body element i.e. Color,
+               Font, Alignment */
+        body {
+            background-color: #05c46b;
+            font-family: Verdana;
+            text-align: center;
+        }
+
+        /* Styling the Form (Color, Padding, Shadow) */
+        form {
+            background-color: #fff;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px 20px;
+            box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Styling form-control Class */
+        .form-control {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        /* Styling form-control Label */
+        .form-control label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Styling form-control input,
+        select, textarea */
+        .form-control input,
+        .form-control select,
+        .form-control textarea {
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            padding: 10px;
+            display: block;
+            width: 95%;
+        }
+
+        /* Styling form-control Radio
+        button and Checkbox */
+        .form-control input[type="radio"],
+        .form-control input[type="checkbox"] {
+            display: inline-block;
+            width: auto;
+        }
+
+        /* Styling Button */
+        button {
+            background-color: #05c46b;
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            font-size: 21px;
+            display: block;
+            width: 100%;
+            height: 50px;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+    <body>
+        <h1>Predict Heart Disease risk with a simple model!</h1>
+        <h2>This is not medical advice and should not be used as such! For all medical advice please seek the assitance of a licensed doctor. For education purposes only!!!</h2>
+    
+        <form action="/data" method = "POST">
+
+            <div>
+                Here, I will include some information about the model, what attributes were selected to ask about,
+                what attributes we decided to drop and why. Even some links to pages including one to the data we used,
+                and pages about health information regarding heart disease and lowering risks.
+            </div>
+            <br><br><br>
+
+            <div>
+                <label> <b>Do you Have High Blood Pressure?</b> </label> <br> <hr>
+                    <input type = "radio" name = "HighBP" value=1> Yes, I have high Blood Pressure </input> <br>
+                    <input type = "radio" name = "HighBP" value=0> No, I do not have high Blood Pressure </input>
+            </div>
+
+            <br><br>
+
+            <div>
+                <label> <b>Do you Have High Cholestoral?</b> </label> <br> <hr>
+                    <input type = "radio" name = "HighChol" value=0> Yes, I have high Cholestoral </input> <br>
+                    <input type = "radio" name = "HighChol" value=1> No, I do not have high Cholestoral </input>
+            </div>
+
+            <br><br>
+            <!-- Hidden values, 0 for model prediction -->
+            <div>
+                <input type = "text" name = "CholCheck" value = 0 hidden = true/></p>
+            </div>
+            <!-- Hidden values, 0 for model prediction -->
+
+            <div>
+                <label> <b>Are you a Habitual Smoker?</b> </label> <br> <hr>
+                    <input type = "radio" name = "Smoker" value=1> No, I am not a Habitual Smoker </input> <br>
+                    <input type = "radio" name = "Smoker" value=0> Yes I am a Habitual Smoker </input>
+            </div>
+
+            <br><br>
+
+            <div>
+                <label> <b>Have you ever had a Stroke</b> </label> <br> <hr>
+                    <input type = "radio" name = "Stroke" value=1> No, I've never had a stroke. </input> <br>
+                    <input type = "radio" name = "Stroke" value=0> Yes, I have had a stroke. </input>
+            </div>
+
+
+            <!-- Hidden values, 0 for model prediction -->
+            <div>
+                <input type = "text" name = "PhysActivity" value = 0 hidden = true/></p>
+                <input type = "text" name = "Fruits" value = 0 hidden = true/></p>
+                <input type = "text" name = "Veggies" value = 0 hidden = true/></p>
+                <input type = "text" name = "HvyAlcoholConsump" value = 0 hidden = true/></p>
+                <input type = "text" name = "AnyHealthcare" value = 0 hidden = true/></p>
+                <input type = "text" name = "NoDocbcCost" value = 0 hidden = true/></p>
+            </div>
+            <!-- Hidden values, 0 for model prediction -->
+            
+            <div>
+                <label>
+                    <b>How do you rank your general health?</b>
+                </label> <hr>
+                <label>
+                 <input type = "radio" name = "GenHlth" value="1"> Excellent </input>
+                </label> 
+                <br>
+                <label>
+                    <input type = "radio" name = "GenHlth" value="2"> Very Good </input>
+                </label>
+                <br>
+                <label>
+                    <input type = "radio" name = "GenHlth" value="3"> Good</input>
+                </label>
+                <br>
+                <label>
+                    <input type = "radio" name = "GenHlth" value="4"> Fair </input>
+                </label>
+                <br>
+                <label>
+                    <input type = "radio" name = "GenHlth" value="5"> Poor </input>
+                </label>
+            </div>
+
+            <br>
+
+            <!-- Hidden values, 0 for model prediction -->
+            <div>
+                <input type = "text" name = "DiffWalk" value = 0 hidden = true/></p>
+            </div>
+            <!-- Hidden values, 0 for model prediction -->
+
+
+            <div>
+                <label> <b>What is your assigned biological sex at birth?</b> </label> <br> <hr>
+                    <input type = "radio" name = "Sex" value=1> Male </input> <br>
+                    <input type = "radio" name = "Sex" value=0> Female </input>
+            </div>
+
+            <br><br>
+            <div>
+                <label>
+                    <b>What Age Bracket do you Fall into?</b> 
+                </label> <hr>
+                <br>
+                <label>
+                 <input type = "radio" name = "Age" value="1"> 18-24 years of age </input>
+                </label>
+                <br>
+                <label>
+                    <input type = "radio" name = "Age" value="2"> 25-29 years of age </input>
+                </label>
+                <br>
+                <label>
+                    <input type = "radio" name = "Age" value="3">30-34 years of age </input>
+                </label>
+                <br>
+                <label>
+                    <input type = "radio" name = "Age" value="4">35-39 years of age </input>
+                </label>
+                <br>
+                <label>
+                    <input type = "radio" name = "Age" value="5"> 40-44 years of age </input>
+                </label>
+                <br>
+                <label>
+                    <input type = "radio" name = "Age" value="6"> 45-49 years of age</input>
+                </label>
+                <br>
+                <label>
+                    <input type = "radio" name = "Age" value="7"> 50-54 years of age </input>
+                </label>
+                <br>
+                <label>
+                    <input type = "radio" name = "Age" value="8"> 55-59 years of age </input>
+                </label>
+                <br>
+                <label>
+                    <input type = "radio" name = "Age" value="9"> 60-64 years of age </input>
+                </label>
+                <br>
+                <label>
+                    <input type = "radio" name = "Age" value="10"> 65-69 years of age </input>
+                </label>
+                <br>
+                <label>
+                    <input type = "radio" name = "Age" value="11"> 70-74 years of age </input>
+                </label>
+                <br>
+                <label>
+                    <input type = "radio" name = "Age" value="12"> 75-79 years of age </input>
+                </label>
+                <br>
+                <label>
+                    <input type = "radio" name = "Age" value="13"> 80+ years of age </input>
+                </label>
+            </div>
+
+
+            <!-- Hidden values, 0 for model prediction -->
+            <div>
+                <input type = "text" name = "Education" value = 0 hidden = true/></p>
+                <input type = "text" name = "Income" value = 0 hidden = true/></p>
+                <input type = "text" name = "BMI_bin" value = 0 hidden = true/></p>
+                <input type = "text" name = "MentHlth_bin" value = 0 hidden = true/></p>
+                <input type = "text" name = "PhysHlth_bin" value = 0 hidden = true/></p>
+                <input type = "text" name = "Diabetes_bin" value = 0 hidden = true/></p>
+            </div>
+            <!-- Hidden values, 0 for model prediction -->
+
+            <p>
+                <button type="submit" value="submit"> <b>Click here to recieve results!</b> </button>
+            </p>
+        </form>
+    </body>
 </html>
