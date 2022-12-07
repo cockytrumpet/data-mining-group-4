@@ -35,9 +35,9 @@ def make_tree(data, matrix_title, output_file):
     labels = np.asarray(labels).reshape(2, 2)
     plt.figure(figsize=(4, 4))
     pretty_matrix = sns.heatmap(matrix, annot=labels, fmt="")
-    pretty_matrix.set(title=matrix_title)
+    pretty_matrix.set(title=f"Decision Tree {matrix_title}")
     pretty_matrix.set(xlabel="Predicted", ylabel="Actual")
-    plt.savefig(f"{output_file}_matrix")
+    plt.savefig(f"results/tree/{output_file}_matrix")
 
     # print stats
     importance = pd.DataFrame(
@@ -47,11 +47,13 @@ def make_tree(data, matrix_title, output_file):
         }
     )
     importance.sort_values("importance", ascending=False, inplace=True)
-    print(f"{matrix_title}")
-    print(metrics.classification_report(target_test, result))
-    print(importance)
 
-    # save decision tree as png
+    with open(f"results/tree/{output_file}_stats.txt", "w") as f:
+        f.write(metrics.classification_report(target_test, result))
+        f.write("\n")
+        f.write(importance.to_string())
+
+    # save small decision tree as png
     dot_data = tree.export_graphviz(
         classifier,
         out_file=None,
@@ -64,17 +66,56 @@ def make_tree(data, matrix_title, output_file):
     )
     graph = graphviz.Source(dot_data)
     graph.format = "png"
-    graph.render(output_file)
+    graph.render(f"results/tree/{output_file}")
+
+    # save small decision tree as png horizontal
+    dot_data = tree.export_graphviz(
+        classifier,
+        out_file=None,
+        feature_names=features_train.columns,
+        filled=True,
+        proportion=True,
+        rounded=True,
+        max_depth=3,
+        rotate=False,
+    )
+    graph = graphviz.Source(dot_data)
+    graph.format = "png"
+    graph.render(f"results/tree/{output_file}_horizontal")
+
+    # save full decision tree as png
+    dot_data = tree.export_graphviz(
+        classifier,
+        out_file=None,
+        feature_names=features_train.columns,
+        filled=True,
+        proportion=True,
+        rounded=True,
+        max_depth=7,
+        rotate=True,
+    )
+    graph = graphviz.Source(dot_data)
+    graph.format = "png"
+    graph.render(f"results/tree/{output_file}_full")
+
+    # save full decision tree as png horizontal
+    dot_data = tree.export_graphviz(
+        classifier,
+        out_file=None,
+        feature_names=features_train.columns,
+        filled=True,
+        proportion=True,
+        rounded=True,
+        max_depth=7,
+        rotate=False,
+    )
+    graph = graphviz.Source(dot_data)
+    graph.format = "png"
+    graph.render(f"results/tree/{output_file}_full_horizontal")
 
 
 data_original = pd.read_csv("datasets/dataset.csv", index_col=0)
-
-pos_sample = data_original[data_original["HeartDiseaseorAttack"] == 1]
-neg_sample = data_original[data_original["HeartDiseaseorAttack"] == 0].sample(
-    n=len(pos_sample)
-)
-data_balanced = pd.concat([pos_sample, neg_sample], ignore_index=True)
-data_balanced = data_balanced.sample(frac=1)
+data_balanced = pd.read_csv("datasets/dataset_balanced.csv", index_col=0)
 
 make_tree(data_original, "Original", "tree")
 make_tree(data_balanced, "Balanced", "tree_balanced")

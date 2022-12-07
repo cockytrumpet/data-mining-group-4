@@ -1,0 +1,31 @@
+              precision    recall  f1-score   support
+
+         0.0       0.77      0.72      0.75      4786
+         1.0       0.74      0.79      0.76      4772
+
+    accuracy                           0.75      9558
+   macro avg       0.76      0.75      0.75      9558
+weighted avg       0.76      0.75      0.75      9558
+
+              feature  importance
+0              HighBP       0.322
+14                Age       0.255
+11            GenHlth       0.246
+13                Sex       0.055
+1            HighChol       0.044
+4              Stroke       0.044
+3              Smoker       0.012
+12           DiffWalk       0.011
+16             Income       0.003
+20       Diabetes_bin       0.003
+10        NoDocbcCost       0.002
+17            BMI_bin       0.001
+19       PhysHlth_bin       0.001
+9       AnyHealthcare       0.000
+8   HvyAlcoholConsump       0.000
+7             Veggies       0.000
+6              Fruits       0.000
+5        PhysActivity       0.000
+15          Education       0.000
+2           CholCheck       0.000
+18       MentHlth_bin       0.000
