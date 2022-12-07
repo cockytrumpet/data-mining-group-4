@@ -1,5 +1,6 @@
               precision    recall  f1-score   support
 
+<<<<<<< HEAD
          0.0       0.77      0.74      0.76     45753
          1.0       0.76      0.79      0.78     47991
 
@@ -29,3 +30,12 @@ weighted avg       0.77      0.77      0.77     93744
 15          Education        0.00
 5        PhysActivity        0.00
 19       PhysHlth_bin        0.00
+=======
+         0.0       0.92      0.99      0.95     45968
+         1.0       0.53      0.15      0.23      4768
+
+    accuracy                           0.91     50736
+   macro avg       0.73      0.57      0.59     50736
+weighted avg       0.88      0.91      0.88     50736
+
+>>>>>>> 4c93f3fd7de1a5df5ee100260f735d7ec353e080

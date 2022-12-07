@@ -3,6 +3,7 @@ import pickle
 import pandas as pd
 
 # available models: tree, tree_balanced, bayes, ada, mlp
+#                   bayes_balanced, ada_balanced, mlp_balanced
 MODEL = "tree_balanced"
 
 match MODEL:
@@ -15,11 +16,20 @@ match MODEL:
     case "bayes":
         with open("models/bayes.model", "rb") as f:
             loaded_model = pickle.load(f)
+    case "bayes_balanced":
+        with open("models/bayes_balanced.model", "rb") as f:
+            loaded_model = pickle.load(f)
     case "ada":
         with open("models/ada.model", "rb") as f:
             loaded_model = pickle.load(f)
+    case "ada_balanced":
+        with open("models/ada_balanced.model", "rb") as f:
+            loaded_model = pickle.load(f)
     case "mlp":
         with open("models/mlp.model", "rb") as f:
+            loaded_model = pickle.load(f)
+    case "mlp_balanced":
+        with open("models/mlp_balanced.model", "rb") as f:
             loaded_model = pickle.load(f)
     case _:
         with open("models/tree_balanced.model", "rb") as f:

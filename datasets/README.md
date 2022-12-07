@@ -4,6 +4,7 @@
 | dataset_unmodified.csv | original, unmodified data |
 | dataset_attributes_added.csv | attributes added based on choices below |
 | dataset.csv | attributes added and attributes they were derived from removed |
+| dataset_balanced.csv | data resampled to compesate for class imbalance |
 
 # Binning Choices
 | new attribute | derived from |
