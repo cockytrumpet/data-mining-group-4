@@ -77,10 +77,20 @@
         <form action="/data" method = "POST">
 
             <div>
-                Here, I will include some information about the model, what attributes were selected to ask about,
-                what attributes we decided to drop and why. Even some links to pages including one to the data we used,
-                and pages about health information regarding heart disease and lowering risks.
+                The decision tree model was created with a CART (Classification And Regression Tree) algorithm using the 
+                <a href="https://scikit-learn.org/stable/">Scikit</a> library. It was trained using a dataset from 
+                <a href="https://www.kaggle.com/datasets/alexteboul/heart-disease-health-indicators-dataset">Kaggle</a>.
             </div>
+            <br>
+            <div> 
+                Even though the dataset contains more attributes than are asked below, it was determined that it performs 
+                the best when only the top seven attributes (as determined by the algorithm) were used in training.
+            </div>
+            <br>
+            <div>
+                More information regarding heart disease and lowering risk can be found at
+                <a href="https://www.cdc.gov/heartdisease/index.htm">Centers for Disease Control and Prevention</a>.
+            </dev>
             <br><br><br>
 
             <div>
