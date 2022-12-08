@@ -62,7 +62,8 @@
 </head>
     <body>
         <h1>Predict Heart Disease risk with a simple model!</h1>
-        <h2>This is not medical advice and should not be used as such! For all medical advice please seek the assitance of a licensed doctor. For education purposes only!!!</h2>
+        <h2>This is not medical advice and should not be used as such! For all medical advice please seek the information of a licensed doctor. 
+            For education purposes only!</h2>
     
         <form action="/data" method = "POST">
 
@@ -74,7 +75,8 @@
             <br>
             <div> 
                 Even though the dataset contains more attributes than are asked below, it was determined that it performs 
-                the best when only the top seven attributes (as determined by the algorithm) were used in training.
+                the best when only the top seven attributes, as determined by the algorithm,  were used in training and therefore we use these 7
+                key attributes to determine a risk binary. 
             </div>
             <br>
             <div>
@@ -113,7 +115,7 @@
             <br>
 
             <div>
-                <label> <b>Have you ever had a Stroke</b> </label> <br> <hr>
+                <label> <b>Have you ever had a Stroke?</b> </label> <br> <hr>
                     <input type = "radio" name = "Stroke" value=1> No, I've never had a stroke. </input> <br>
                     <input type = "radio" name = "Stroke" value=0> Yes, I have had a stroke. </input>
             </div>
