@@ -4,16 +4,12 @@
 <head>
     <title> Basic Heart Disease Risk Factor Predictor </title>
     <style>
-        /* I really need to pull out this style sheet but it broke whne I did so thats a later problem */
-               /* Styling the Body element i.e. Color,
-               Font, Alignment */
         body {
-            background-color: #05c46b;
+            background-color: #8301e0;
             font-family: Verdana;
             text-align: center;
         }
 
-        /* Styling the Form (Color, Padding, Shadow) */
         form {
             background-color: #fff;
             max-width: 600px;
@@ -22,20 +18,16 @@
             box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
         }
 
-        /* Styling form-control Class */
         .form-control {
             text-align: left;
             margin-bottom: 25px;
         }
 
-        /* Styling form-control Label */
         .form-control label {
             display: block;
             margin-bottom: 10px;
         }
 
-        /* Styling form-control input,
-        select, textarea */
         .form-control input,
         .form-control select,
         .form-control textarea {
@@ -47,8 +39,6 @@
             width: 95%;
         }
 
-        /* Styling form-control Radio
-        button and Checkbox */
         .form-control input[type="radio"],
         .form-control input[type="checkbox"] {
             display: inline-block;
@@ -77,9 +67,6 @@
         <form action="/data" method = "POST">
 
             <div>
-                Here, I will include some information about the model, what attributes were selected to ask about,
-                what attributes we decided to drop and why. Even some links to pages including one to the data we used,
-                and pages about health information regarding heart disease and lowering risks.
             </div>
             <br><br><br>
 
@@ -97,7 +84,7 @@
                     <input type = "radio" name = "HighChol" value=1> No, I do not have high Cholestoral </input>
             </div>
 
-            <br><br>
+            <br>
             <!-- Hidden values, 0 for model prediction -->
             <div>
                 <input type = "text" name = "CholCheck" value = 0 hidden = true/></p>
@@ -110,7 +97,7 @@
                     <input type = "radio" name = "Smoker" value=0> Yes I am a Habitual Smoker </input>
             </div>
 
-            <br><br>
+            <br>
 
             <div>
                 <label> <b>Have you ever had a Stroke</b> </label> <br> <hr>
@@ -129,7 +116,7 @@
                 <input type = "text" name = "NoDocbcCost" value = 0 hidden = true/></p>
             </div>
             <!-- Hidden values, 0 for model prediction -->
-            
+            <br>
             <div>
                 <label>
                     <b>How do you rank your general health?</b>
