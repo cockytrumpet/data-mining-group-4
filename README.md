@@ -40,7 +40,7 @@ Sample of prior work:
 - Tools to be used 
   - python/R
   - pandas - dataset manipulation
-  - matplotlib/seaborn - visualization
+  - matplotlib/seaborn/graphviz - visualization
   - scikit - analysis/classification
 
 
@@ -48,7 +48,7 @@ Sample of prior work:
 1. Are we able to accurately model a way to predict heart disease based on the attributes that are common indicators of poor coronary health?
 	- Through the use of various models, aiming to accuratly plug in a patients data to our models and tell them their risk for heart disease
 2. Which of these attributes are the most important factors when determining risk of Coronary heart disease?
-	- Narrowing in ok key attributes to boil down the important information for health decisions
+	- Narrowing in on key attributes to boil down the important information for health decisions
 3. How can we make this information more approachable and digestible to the general public?
 	- Through the use of a simple web app, make this information accessible to more people.
 
@@ -61,8 +61,8 @@ Sample of prior work:
 <br>
 
 ### **Application of the information gained**
-One of our original goals was to ake this information more accessible to the general public, adn we achieved that by creating a small web application that is based on the models we found to be best.
-Using Flask, we were able to tie in the model, using the 7 factors that were statistically determined to be high influence on the outcome, the user inputs those answers into a form, which is run through the model and a binary of high or low risk is determined. Setting out, we ideally wanted to return a percentage but unfortunatly the model that was best suited for this application based on our data returned a binary. Moving forward, tailoring information based on the user input to provide an even better answer would be ideal in making htis information more approachable and easier to understand. 
+One of our original goals was to make this information more accessible to the general public, and we achieved that by creating a small web application that is based on the models we found to be best.
+Using Flask, we were able to tie in the model, using the 7 factors that were statistically determined to be high influence on the outcome, the user inputs those answers into a form, which is run through the model and a binary of high or low risk is determined. Setting out, we ideally wanted to return a percentage but unfortunatly the model that was best suited for this application based on our data returned a binary. Moving forward, tailoring information based on the user input to provide an even better answer would be ideal in making this information more approachable and easier to understand. 
 
 
 ### **Link to presentation**
@@ -70,4 +70,7 @@ https://docs.google.com/presentation/d/1csEElXiHB4GJ2vBgSL2gKtzkgLuavpISGrliMVuo
 
 ### **Link to video presentation**
 https://youtu.be/zSHCQT4rzjY
+
+### **Link to web application**
+https://heartdisease.impunit.us
 

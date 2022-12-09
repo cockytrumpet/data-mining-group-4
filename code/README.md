@@ -14,3 +14,8 @@
 | mlp.py | Multi-Layer Perceptron classifier |
 | tree.py | Decision Tree classifier |
 
+# Model example usage
+
+| file | description |
+|-|-|
+| predict.py | loads the selected model and gives prediction if given properly formatted input |
