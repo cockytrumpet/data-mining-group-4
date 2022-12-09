@@ -1,4 +1,4 @@
-# data-mining-group-4
+# Analysis of Heart Disease Prediction and Risk Factor: CSPB4502 Group 4
 
 ### **Title:** Heart Disease Prediciton and Risk Factors
 
