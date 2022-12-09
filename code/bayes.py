@@ -8,11 +8,7 @@ from sklearn import metrics
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import GaussianNB
 
-<<<<<<< HEAD
 data = pd.read_csv("datasets/dataset_balanced.csv", index_col=0)
-=======
-data = pd.read_csv("datasets/dataset.csv", index_col=0)
->>>>>>> 4c93f3fd7de1a5df5ee100260f735d7ec353e080
 
 target = data["HeartDiseaseorAttack"]
 features = data.drop("HeartDiseaseorAttack", axis=1)
@@ -37,15 +33,6 @@ pretty_matrix = sns.heatmap(matrix, annot=labels, fmt="")
 pretty_matrix.set(title="Bayes")
 pretty_matrix.set(xlabel="Predicted", ylabel="Actual")
 plt.savefig("results/bayes/bayes_matrix")
-<<<<<<< HEAD
-=======
-
-# print stats
-
-with open(f"results/bayes/bayes_stats.txt", "w") as f:
-    f.write(metrics.classification_report(target_test, result))
-    f.write("\n")
->>>>>>> 4c93f3fd7de1a5df5ee100260f735d7ec353e080
 
 # print stats
 with open(f"results/bayes/bayes_stats.txt", "w") as f:

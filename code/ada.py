@@ -1,15 +1,4 @@
 import pickle
-<<<<<<< HEAD
-=======
-
-import matplotlib.pyplot as plt
-import numpy as np
-import pandas as pd
-import seaborn as sns
-from sklearn import metrics
-from sklearn.ensemble import AdaBoostClassifier
-from sklearn.model_selection import train_test_split
->>>>>>> 4c93f3fd7de1a5df5ee100260f735d7ec353e080
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -44,15 +33,6 @@ pretty_matrix = sns.heatmap(matrix, annot=labels, fmt="")
 pretty_matrix.set(title="AdaBoost")
 pretty_matrix.set(xlabel="Predicted", ylabel="Actual")
 plt.savefig("results/ada/ada_matrix")
-<<<<<<< HEAD
-=======
-
-# print stats
-
-with open("results/ada/ada_stats.txt", "w") as f:
-    f.write(metrics.classification_report(target_test, result))
-    f.write("\n")
->>>>>>> 4c93f3fd7de1a5df5ee100260f735d7ec353e080
 
 # print stats
 importance = pd.DataFrame(
