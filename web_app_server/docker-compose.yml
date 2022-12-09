@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  web_app:
+    container_name: heartdisease_flask
+    build: ./build
+    security_opt:
+      - no-new-privileges:true
+    networks:
+      - proxy
+    restart: unless-stopped
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.heartdisease_flask.entrypoints=https
+      - traefik.http.routers.heartdisease_flask.rule=Host(`heartdisease.local.impunit.us`)||Host(`heartdisease.impunit.us`)
+      - traefik.http.routers.heartdisease_flask.tls=true
+      - traefik.http.routers.heartdisease_flask.service=heartdisease_flask
+      - traefik.http.routers.heartdisease_flask.middlewares=my-cloudflarewarp@file,my-GeoBlock@file,rate-limit@file,default-headers@file
+      - traefik.http.services.heartdisease_flask.loadbalancer.server.port=8080
+      - traefik.docker.network=proxy
+
+networks:
+  proxy:
+    external: true
+
